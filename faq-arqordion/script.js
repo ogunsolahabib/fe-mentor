@@ -9,6 +9,11 @@ allItems.forEach((item) => {
 
     inputItem.addEventListener('change', function (e) {
         const checked = e.target.checked;
+        if (checked) {
+            item.classList.add('checked');
+        } else {
+            item.classList.remove('checked');
+        }
 
         answerItem.style.display = checked ? "block" : "none"
     });
