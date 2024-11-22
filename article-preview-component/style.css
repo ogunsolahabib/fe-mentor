@@ -1,3 +1,10 @@
+/* resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 /* 
 - Very Dark Grayish Blue: hsl(217, 19%, 35%)
 - Desaturated Dark Blue: hsl(214, 17%, 51%)
@@ -11,12 +18,135 @@
   --light-grayish-blue: hsl(210, 46%, 95%);
 }
 
+
+html {
+  font-size: 62.5%;
+}
+
 body {
-  font-family: 'Libre Franklin', sans-serif;
   background-color: var(--light-grayish-blue);
+  font-size: 1.3rem;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+h2{
+  color: var(--very-dark-grayish-blue);
+  font-size: 2rem;
+}
+p{
+  color: var(--very-dark-grayish-blue);
+  font-size: 1.3rem;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.article {
+  background-color: white;
+  border-radius: 10px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10rem auto;
+
+}
+.article > img {
+width: 100%;
+object-fit: cover;
+object-position: left;
+}
+
+.article__text-content{
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
+}
+footer{
+  display: flex;
   align-items: center;
-  height: 100vh;
-  margin: 0;
+  gap: 20px;
+}
+
+.article__footer-image{
+  border-radius: 9999px;
+  width: 50px;
+  height: 50px;
+}
+.article__footer-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.article__footer-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.article__share-wrapper{
+  position: relative;
+}
+.article__share-content {
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  top: -2rem;
+  right: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+
+}
+
+.article__share-button {
+  border: none;
+  border-radius: 9999px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+  height: 3rem;
+  width: 3rem;
+  outline: none;
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--desaturated-dark-blue);
+}
+
+.article__share-button:hover {
+background-color: var(--desaturated-dark-blue);
+color: white;
+}
+
+
+@media (min-width: 768px) {
+  .container {
+    width: 100vw;
+  }
+  .article {
+    flex-direction: row;
+    width: 70rem;
+  }
+
+  .article > img {
+    width: 40%;
+  }
+
+  .article__text-content {
+    padding: 3.5rem;
+  }
+  
+}
+
+@media (min-height: 600px) {
+  .container {
+    height: 100vh;
+  }
 }
