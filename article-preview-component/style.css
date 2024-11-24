@@ -35,7 +35,7 @@ h2{
   font-size: 2rem;
 }
 p{
-  color: var(--very-dark-grayish-blue);
+  color: var(--grayish-blue);
   font-size: 1.3rem;
 }
 .container {
@@ -50,21 +50,22 @@ p{
   display: flex;
   flex-direction: column;
   width: 80%;
-  overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin: 10rem auto;
 
 }
-.article > img {
+.article__image {
 width: 100%;
+background: url("./images/drawers.jpg") no-repeat;
 object-fit: cover;
 object-position: left;
+border-radius: 10px 10px 0 0;
 }
 
 .article__text-content{
     padding: 1.5rem;
     display: grid;
-    gap: 1rem;
+    gap: 2.5rem;
 }
 footer{
   display: flex;
@@ -92,16 +93,21 @@ footer{
 
 .article__share-wrapper{
   position: relative;
+  z-index: 9999;
 }
 .article__share-content {
   display: flex;
   gap: 1rem;
   position: absolute;
-  top: -2rem;
+  top: -3.4rem;
   right: 50%;
   left: 50%;
   transform: translateX(-50%);
   width: 100px;
+  padding: .5rem 1.5rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  width: fit-content
 
 }
 
@@ -114,10 +120,10 @@ footer{
   height: 3rem;
   width: 3rem;
   outline: none;
-display: flex;
-align-items: center;
-justify-content: center;
-color: var(--desaturated-dark-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--desaturated-dark-blue);
 }
 
 .article__share-button:hover {
@@ -125,6 +131,24 @@ background-color: var(--desaturated-dark-blue);
 color: white;
 }
 
+
+.article__share-content{
+  background-color: var(--very-dark-grayish-blue);
+  color: white;
+}
+
+.article__share-content::before {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  right: 50%;
+  transform: translateX(50%);
+  width: 0;
+  height: 0;
+  border-left: 1rem solid transparent;
+  border-right: 1rem solid transparent;
+  border-top: 1rem solid var(--very-dark-grayish-blue);
+}
 
 @media (min-width: 768px) {
   .container {
@@ -135,8 +159,9 @@ color: white;
     width: 70rem;
   }
 
-  .article > img {
+  .article__image {
     width: 40%;
+    border-radius: 10px 0 0 10px;
   }
 
   .article__text-content {
